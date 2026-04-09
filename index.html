@@ -3,22 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>MIÉRCOLES 8 DE ABRIL DEL 2026</title>
+  <title>Carta de Amor</title>
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  <!-- Fuentes elegantes y normales -->
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --bg1:#07040f;
-      --bg2:#12061f;
-      --card:#0f0a1a;
-      --text:#f3eefc;
-      --muted:#c9b8e8;
-      --purple:#a855f7;
-      --purple2:#d946ef;
-      --border:rgba(168,85,247,0.25);
-      --glow:rgba(168,85,247,0.55);
+      --bg:#f5f2ee;
+      --paper:#ffffff;
+      --text:#1f1f1f;
+      --muted:#555;
+      --border:#e6e1da;
+      --purple:#7c3aed;
+      --shadow:rgba(0,0,0,0.08);
     }
 
     *{
@@ -28,128 +26,91 @@
     }
 
     body{
+      background: linear-gradient(180deg, #f7f4f1 0%, #f1ede8 100%);
       min-height:100vh;
-      background: radial-gradient(circle at top, #1a0930 0%, var(--bg1) 35%, #04020a 100%);
-      font-family: "Poppins", sans-serif;
-      color: var(--text);
       display:flex;
       justify-content:center;
       align-items:center;
       padding:30px 14px;
-      overflow-x:hidden;
+      font-family:"Inter", sans-serif;
+      color:var(--text);
     }
 
-    /* Fondo con destellos */
-    .stars{
-      position:fixed;
+    .wrapper{
+      width:100%;
+      max-width:900px;
+      position:relative;
+    }
+
+    /* Borde decorativo elegante */
+    .frame{
+      background: linear-gradient(135deg, rgba(124,58,237,0.08), rgba(0,0,0,0));
+      padding:18px;
+      border-radius:20px;
+      border:1px solid rgba(124,58,237,0.15);
+      box-shadow: 0 18px 50px var(--shadow);
+    }
+
+    .paper{
+      background: var(--paper);
+      border-radius:18px;
+      padding:50px 52px;
+      border:1px solid var(--border);
+      position:relative;
+      overflow:hidden;
+    }
+
+    /* Detalle superior suave */
+    .paper::before{
+      content:"";
+      position:absolute;
       top:0;
       left:0;
       width:100%;
-      height:100%;
-      pointer-events:none;
-      opacity:0.55;
-      background-image:
-        radial-gradient(2px 2px at 10% 20%, rgba(255,255,255,0.25) 40%, transparent 41%),
-        radial-gradient(2px 2px at 80% 30%, rgba(255,255,255,0.2) 40%, transparent 41%),
-        radial-gradient(2px 2px at 40% 70%, rgba(255,255,255,0.18) 40%, transparent 41%),
-        radial-gradient(1.5px 1.5px at 70% 85%, rgba(255,255,255,0.15) 40%, transparent 41%),
-        radial-gradient(1.5px 1.5px at 20% 90%, rgba(255,255,255,0.14) 40%, transparent 41%),
-        radial-gradient(2px 2px at 55% 15%, rgba(255,255,255,0.16) 40%, transparent 41%);
-      filter: blur(0.2px);
-      animation: twinkle 5s infinite ease-in-out alternate;
-    }
-
-    @keyframes twinkle{
-      0%{opacity:0.35;}
-      100%{opacity:0.7;}
-    }
-
-    /* Carta */
-    .letter-wrap{
-      width:100%;
-      max-width:920px;
-      position:relative;
-    }
-
-    .letter{
-      background: linear-gradient(180deg, rgba(18,6,31,0.96) 0%, rgba(10,4,18,0.96) 100%);
-      border: 1px solid var(--border);
-      border-radius: 22px;
-      padding: 46px 46px 38px;
-      box-shadow:
-        0 0 50px rgba(0,0,0,0.55),
-        0 0 40px rgba(168,85,247,0.12);
-      position:relative;
-      overflow:hidden;
-      backdrop-filter: blur(10px);
-    }
-
-    /* brillo superior */
-    .letter::before{
-      content:"";
-      position:absolute;
-      top:-120px;
-      left:-120px;
-      width:320px;
-      height:320px;
-      background: radial-gradient(circle, rgba(168,85,247,0.55), transparent 70%);
-      filter: blur(10px);
-      opacity:0.6;
-    }
-
-    .letter::after{
-      content:"";
-      position:absolute;
-      bottom:-140px;
-      right:-140px;
-      width:360px;
-      height:360px;
-      background: radial-gradient(circle, rgba(217,70,239,0.45), transparent 70%);
-      filter: blur(10px);
-      opacity:0.55;
+      height:7px;
+      background: linear-gradient(90deg, transparent, rgba(124,58,237,0.55), transparent);
     }
 
     .header{
-      text-align:center;
       margin-bottom:30px;
-      position:relative;
-      z-index:2;
+      text-align:left;
     }
 
     .date{
-      font-size:14px;
-      letter-spacing:1px;
+      font-size:13px;
+      letter-spacing:0.6px;
       text-transform:uppercase;
-      color: var(--muted);
-      margin-bottom:12px;
+      color:var(--muted);
+      margin-bottom:10px;
+      font-weight:500;
     }
 
     .title{
-      font-family:"Playfair Display", serif;
-      font-size:38px;
+      font-family:"Libre Baskerville", serif;
+      font-size:34px;
       font-weight:700;
-      letter-spacing:1px;
-      margin-bottom:10px;
-      color: var(--text);
-      text-shadow: 0 0 18px rgba(168,85,247,0.18);
+      color:var(--text);
+      margin-bottom:6px;
     }
 
-    .divider{
-      width:110px;
-      height:2px;
-      margin: 0 auto;
-      background: linear-gradient(90deg, transparent, var(--purple), transparent);
-      border-radius:50px;
-      box-shadow: 0 0 18px rgba(168,85,247,0.35);
+    .subtitle{
+      font-size:14px;
+      color:#666;
+      font-weight:400;
+    }
+
+    .line{
+      width:100%;
+      height:1px;
+      background: linear-gradient(90deg, rgba(0,0,0,0.12), rgba(124,58,237,0.25), rgba(0,0,0,0.12));
+      margin:22px 0 0;
     }
 
     .content{
-      position:relative;
-      z-index:2;
+      margin-top:28px;
       font-size:16.6px;
-      line-height:1.9;
-      color: rgba(243,238,252,0.92);
-      padding-top:22px;
+      line-height:1.95;
+      color:#222;
     }
 
     .content p{
@@ -157,119 +118,115 @@
     }
 
     .content strong{
-      color:#ffffff;
       font-weight:700;
-      text-shadow: 0 0 12px rgba(168,85,247,0.15);
+      color:#111;
+    }
+
+    .quote-box{
+      margin:28px 0;
+      padding:18px 22px;
+      border-left:4px solid rgba(124,58,237,0.7);
+      background: rgba(124,58,237,0.05);
+      border-radius:12px;
+      font-family:"Libre Baskerville", serif;
+      font-size:16px;
+      color:#2b2b2b;
     }
 
     .signature{
-      margin-top:28px;
+      margin-top:35px;
       text-align:right;
-      font-family:"Playfair Display", serif;
+      font-family:"Libre Baskerville", serif;
       font-size:18px;
-      color: rgba(243,238,252,0.96);
-      position:relative;
-      z-index:2;
+      color:#111;
     }
 
-    .signature span{
-      display:block;
-      margin-top:6px;
-      font-family:"Poppins", sans-serif;
+    .signature .name{
+      margin-top:8px;
+      font-family:"Inter", sans-serif;
       font-size:14px;
-      color: var(--muted);
-      letter-spacing:0.8px;
-    }
-
-    .name{
-      margin-top:14px;
-      font-size:16px;
       font-weight:600;
-      color: rgba(243,238,252,0.95);
-      text-shadow: 0 0 12px rgba(168,85,247,0.12);
-      font-family:"Poppins", sans-serif;
+      color:#333;
+      letter-spacing:0.5px;
     }
 
     /* Frase final neon */
-    .neon-phrase{
-      margin-top:38px;
-      padding:22px 18px;
-      text-align:center;
+    .neon{
+      margin-top:40px;
+      padding:26px 20px;
       border-radius:18px;
-      border: 1px solid rgba(168,85,247,0.25);
-      background: rgba(168,85,247,0.07);
-      position:relative;
-      z-index:2;
-      box-shadow: 0 0 30px rgba(168,85,247,0.10);
+      text-align:center;
+      border:1px solid rgba(124,58,237,0.25);
+      background: #faf7ff;
+      box-shadow: 0 0 18px rgba(124,58,237,0.12);
     }
 
-    .neon-phrase p{
-      font-family:"Playfair Display", serif;
+    .neon p{
+      font-family:"Libre Baskerville", serif;
       font-size:20px;
-      line-height:1.6;
-      color: #d7b2ff;
+      line-height:1.65;
+      color:#6d28d9;
       text-shadow:
-        0 0 6px rgba(168,85,247,0.9),
-        0 0 16px rgba(217,70,239,0.75),
-        0 0 30px rgba(168,85,247,0.45);
-      animation: neonPulse 2.6s infinite ease-in-out alternate;
+        0 0 6px rgba(124,58,237,0.85),
+        0 0 16px rgba(124,58,237,0.55),
+        0 0 28px rgba(124,58,237,0.35);
+      animation: pulse 2.8s ease-in-out infinite alternate;
     }
 
-    @keyframes neonPulse{
+    @keyframes pulse{
       0%{
         text-shadow:
-          0 0 6px rgba(168,85,247,0.75),
-          0 0 14px rgba(217,70,239,0.55),
-          0 0 24px rgba(168,85,247,0.35);
+          0 0 5px rgba(124,58,237,0.65),
+          0 0 14px rgba(124,58,237,0.45),
+          0 0 24px rgba(124,58,237,0.25);
       }
       100%{
         text-shadow:
-          0 0 10px rgba(168,85,247,1),
-          0 0 22px rgba(217,70,239,0.9),
-          0 0 40px rgba(168,85,247,0.6);
+          0 0 8px rgba(124,58,237,1),
+          0 0 20px rgba(124,58,237,0.8),
+          0 0 36px rgba(124,58,237,0.5);
       }
     }
 
-    /* Corazon decorativo */
-    .heart{
-      margin-top:14px;
-      font-size:20px;
-      color: var(--purple2);
-      text-shadow: 0 0 18px rgba(217,70,239,0.85);
+    .neon .icons{
+      margin-top:10px;
+      font-size:18px;
+      opacity:0.9;
     }
 
     /* Responsive */
-    @media(max-width:700px){
-      .letter{
-        padding: 34px 20px 30px;
+    @media(max-width:720px){
+      .paper{
+        padding:38px 22px;
       }
       .title{
-        font-size:30px;
+        font-size:28px;
       }
       .content{
-        font-size:15.5px;
+        font-size:15.6px;
       }
-      .neon-phrase p{
+      .neon p{
         font-size:18px;
       }
     }
+
   </style>
 </head>
 
 <body>
-  <div class="stars"></div>
+  <div class="wrapper">
+    <div class="frame">
+      <div class="paper">
 
-  <div class="letter-wrap">
-    <div class="letter">
-      
-      <div class="header">
-        <div class="date">Miércoles, 8 de abril de 2026 — Noche</div>
-        <div class="title">Carta para mi amor</div>
-        <div class="divider"></div>
-      </div>
+        <div class="header">
+          <div class="date">Miércoles, 8 de abril de 2026 — Noche</div>
+          <div class="title">Para la dueña de mi corazón</div>
+          <div class="subtitle">Una carta escrita con amor, deseo y verdad.</div>
+          <div class="line"></div>
+        </div>
 
-      <div class="content">
-        <p><strong>MI MUJER HERMOSA,</strong></p>
+        <div class="content">
+          <p><strong>MI MUJER HERMOSA,</strong></p>
 
         <p>
           Esta noche me senté a escribirte porque no pude aguantarme más las ganas de decirte lo que llevo guardado en el pecho…
@@ -289,9 +246,9 @@
           besarte con hambre, con pasión, con todo lo que me despiertas.
         </p>
 
-        <p>
+        <div class="quote-box">
           Porque tú no solo eres mi novia… <strong>tú eres mi debilidad más hermosa.</strong>
-        </p>
+        </div>
 
         <p>
           A veces me quedo pensando en ti y me dan ganas de decirte todo sin filtros… que me encantas, que me provocas, que me vuelves loco.
@@ -340,14 +297,16 @@
           <div class="name">JUAN KALETH MENDOZA PRIMERA 💜</div>
         </div>
 
-        <div class="neon-phrase">
-          <p>
-            Mi niña linda… tú eres el sueño más bonito que la vida me regaló, el abrazo que mi alma siempre buscó,
-            la calma que me llena por dentro y la pasión que me enciende sin avisar.  
-            Y mientras existas tú, yo siempre voy a elegirte, siempre voy a cuidarte, siempre voy a amarte con todo lo que soy,
-            hasta el último latido… <strong>VALERIA PETRO VILLAZÓN</strong>.
-          </p>
-          <div class="heart">💜✨</div>
+          <div class="neon">
+            <p>
+              Mi niña linda… tú eres el amor que me cambió la vida, la razón por la que mi corazón late más fuerte,
+              la persona que me inspira a ser mejor y la única capaz de encender mi alma con solo existir.
+              Yo te prometo que siempre voy a elegirte, cuidarte y amarte con una intensidad que no se apaga…
+              porque mi amor por ti es infinito, eterno y completamente tuyo… <strong>VALERIA PETRO VILLAZÓN</strong>.
+            </p>
+            <div class="icons">💜✨💘</div>
+          </div>
+
         </div>
 
       </div>
